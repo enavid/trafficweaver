@@ -132,7 +132,17 @@ async def main() -> None:
 
 if __name__ == "__main__":
     try:
-        asyncio.run(main())
+        raw = input("How many days to run? (0 = run forever): ").strip()
+        total_days = int(raw) if raw.isdigit() else 0
+        day = 1
+        while True:
+            print(f"\n[TrafficWeaver] Starting day {day}...")
+            asyncio.run(main())
+            if total_days > 0 and day >= total_days:
+                print(f"[TrafficWeaver] Completed {total_days} day(s). Exiting.")
+                break
+            day += 1
+            time.sleep(60)  # 60s gap between cycles
     except KeyboardInterrupt:
         print("\n[TrafficWeaver] Interrupted by user.")
         sys.exit(0)
