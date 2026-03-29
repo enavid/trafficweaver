@@ -4,17 +4,16 @@ stats.py – Track daily download progress and persist across restarts.
 
 from __future__ import annotations
 
-import json
 import os
 import time
-from dataclasses import asdict, dataclass
+import json
 from datetime import datetime
-from typing import Optional
+from src.logger import get_logger
+from dataclasses import asdict, dataclass
 
-from logger import get_logger
 
 log = get_logger("stats")
-_STATS_FILE = "logs/daily_stats.json"
+_STATS_FILE = "../logs/daily_stats.json"
 
 
 @dataclass

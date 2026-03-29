@@ -11,16 +11,16 @@
 
 from __future__ import annotations
 
-import asyncio
 import random
+import asyncio
+import aiohttp
+
+from src.config import Config
+from bs4 import BeautifulSoup
+from src.logger import get_logger
 from typing import List, Optional
 from urllib.parse import urljoin, urlparse
 
-import aiohttp
-from bs4 import BeautifulSoup
-
-from config import Config
-from logger import get_logger
 
 log = get_logger("browser")
 

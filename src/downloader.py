@@ -10,14 +10,11 @@ import time
 import uuid
 import random
 import asyncio
-from typing import Optional
-from dataclasses import dataclass, field
-
-
 import aiohttp
-
-from config import Config
-from logger import get_logger
+from typing import Optional
+from src.config import Config
+from src.logger import get_logger
+from dataclasses import dataclass
 
 log = get_logger("downloader")
 

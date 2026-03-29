@@ -7,19 +7,18 @@
 
 from __future__ import annotations
 
-import os
 import sys
 import random
 import asyncio
 from datetime import datetime
 from typing import List
 
-from config import load_config
-from browser import browse_site
-from downloader import download_file
-from logger import setup_logger, get_logger
-from scheduler import generate_event_times, seconds_until
-from stats import load_or_create, record_file_download, record_browse
+from src.config import load_config
+from src.browser import browse_site
+from src.downloader import download_file
+from src.logger import setup_logger, get_logger
+from src.scheduler import generate_event_times, seconds_until
+from src.stats import load_or_create, record_file_download, record_browse
 
 
 async def _run_file_downloads(cfg, stats, semaphore, event_times: List[datetime]) -> None:

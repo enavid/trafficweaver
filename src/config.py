@@ -108,5 +108,5 @@ def load_config() -> Config:
         browse_max_internal_links=_int("BROWSE_MAX_INTERNAL_LINKS", 3),
         use_playwright=_bool("USE_PLAYWRIGHT", False),
         log_level=os.getenv("LOG_LEVEL", "INFO"),
-        log_file=os.getenv("LOG_FILE", "logs/trafficweaver.log"),
+        log_file=os.getenv("LOG_FILE", "../logs/trafficweaver.log"),
     )
