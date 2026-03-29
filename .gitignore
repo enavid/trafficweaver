@@ -632,4 +632,7 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
+# .env file
+.env
+
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm+all,vs,venv,virtualenv,dotenv
