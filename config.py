@@ -16,8 +16,7 @@ load_dotenv()
 
 def _parse_multiline_list(raw: str) -> List[str]:
     """Return non-empty, stripped lines from a triple-quoted env value."""
-    return [line.strip() for line in raw.strip().splitlines() if line.strip()]
-
+    return [x.strip() for x in raw.replace("\n", ",").split(",") if x.strip()]
 
 def _parse_weights(raw: str) -> List[float]:
     parts = [float(x.strip()) for x in raw.split(",") if x.strip()]
