@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── TrafficWeaver Design Tokens ─────────────────────────────── */
+
+:root {
+  /* Surfaces — Dark industrial theme (default dark) */
+  --color-bg: #0f1117;
+  --color-surface: #161922;
+  --color-surface-2: #1c2030;
+  --color-surface-offset: #232738;
+  --color-surface-dynamic: #2a2f42;
+  --color-border: #2e3348;
+  --color-divider: #252a3e;
+
+  /* Text */
+  --color-text: #e4e5ea;
+  --color-text-muted: #8b8fa3;
+  --color-text-faint: #565b73;
+  --color-text-inverse: #0f1117;
+
+  /* Primary Accent — Cyan/Teal (network/traffic feel) */
+  --color-primary: #22d3ee;
+  --color-primary-hover: #06b6d4;
+  --color-primary-active: #0891b2;
+  --color-primary-highlight: rgba(34, 211, 238, 0.1);
+
+  /* Semantic */
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+
+  /* Radius */
+  --radius: 0.5rem;
+
+  /* Transition */
+  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: dark;
+}
+
+/* Light mode */
+.light {
+  --color-bg: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-surface-2: #f9fafb;
+  --color-surface-offset: #f0f1f3;
+  --color-surface-dynamic: #e5e7eb;
+  --color-border: #d1d5db;
+  --color-divider: #e5e7eb;
+
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --color-text-faint: #9ca3af;
+  --color-text-inverse: #ffffff;
+
+  --color-primary: #0891b2;
+  --color-primary-hover: #0e7490;
+  --color-primary-active: #155e75;
+  --color-primary-highlight: rgba(8, 145, 178, 0.08);
+
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+
+  color-scheme: light;
+}
+
+/* ── Base Reset ──────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-faint);
+}
+
+/* ── Focus ring ──────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+/* ── Interactive transition ──────────────────────────────────── */
+
+a, button, [role="button"], input, textarea, select {
+  transition: color var(--transition), background var(--transition),
+    border-color var(--transition), box-shadow var(--transition),
+    opacity var(--transition);
+}
+
+/* ── Utility classes ─────────────────────────────────────────── */
+
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
